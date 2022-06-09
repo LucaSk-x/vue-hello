@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.0-beta1/css/bootstrap.min.css'
+        integrity='sha512-o/MhoRPVLExxZjCFVBsm17Pkztkzmh7Dp8k7/3JrtNCHh0AQ489kwpfA3dPSHzKDe8YCuEhxXq3Y71eb/o6amg==' crossorigin='anonymous' />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body class="bg-warning">
+    <div id="app">
+        <div class="container">
+            <div class="row align-items-center flex-column">
+                <div class="col-6">
+                    <h1>Ciao {{ testoH1 }} </h1>
+                    <div class="input d-flex flex-column">
+                        <div class="saluto d-flex flex-column">
+                            <input type="text" v-model="message">
+                            <button class="btn btn-dark align-self-center my-3" @click="saluta">Saluta</button>
+                            <p>Contenuto dell' input: {{ message }} </p>
+                        </div>
+                        <div class="immagine d-flex flex-column">
+                            <input type="text" placeholder="Inserisci Url dell'Imaggine" v-model="inputImg">
+                            <button class="btn btn-dark align-self-center my-3" @click="generaImg"  @click="delete">Carica Immagine</button>
+                            <p>Url immagine: {{ image }} </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 d-flex justify-content-center">
+                    <div class="img-contain">
+                        <img class="w-100" v-bind:src="image" alt="Vue">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
